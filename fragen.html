@@ -3,97 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eine Frage...</title>
+  <title>Frage</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-body {
+    body {
       font-family: 'Poppins', sans-serif;
       background-color: #FFF2F2;
       margin: 0;
-      padding: 40px 20px;
-      text-align: center;
-      color: #2C3E50;
-      overflow: hidden;
-      height: 100vh;
+      padding: 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      height: 100vh;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.buttons {
+  animation: fadeInUp 1.5s ease-out;
+}
+
+    h1 {
+      font-size: 1.6rem;
+      margin: 20px;
+      padding: 0 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
       margin-top: 20px;
     }
 
-    #noBtn {
-      position: absolute;
-      top: 80px;
-      left: 50%;
-      transform: translateX(-50%);
+    button {
       padding: 12px 24px;
       background-color: #D66C4D;
       color: white;
       border: none;
       border-radius: 8px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      width: 200px;
     }
 
-    #noBtn:hover {
+    button:hover {
       background-color: #c4573a;
     }
 
-    #yesBtn {
-      margin-bottom: 40px;
-      padding: 12px 24px;
-      background-color: #D66C4D;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    #funny-msg {
+      display: none;
+      font-size: 1rem;
+      margin-top: 20px;
+      color: #D66C4D;
     }
 
-    #yesBtn:hover {
-      background-color: #c4573a;
+    .disappear {
+      animation: vanish 1.2s forwards;
     }
+
+    @keyframes vanish {
+      0% { opacity: 1; transform: scale(1) rotate(0deg); }
+      50% { opacity: 0.5; transform: scale(0.8) rotate(10deg); }
+      100% { opacity: 0; transform: scale(0) rotate(720deg); }
+    }
+
+    @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   </style>
 </head>
 <body>
-
-  </style>
-</head>
-<body>
-  <h1>Hier darfst du nur weiter wenn du heilst.</h1>
-
+  
+  <h1>Heilst du baby? </h1>
   <div class="buttons">
-    <button onclick="goToGame()">Ja ich heile</button>
-    <button id="noBtn">No, just kill me</button>
+    <button onclick="answerYes()">Yesss</button>
+    <button id="noBtn" onclick="answerNo()">No, lets jump together</button>
   </div>
+  <div id="funny-msg">Nö!</div>
 
   <script>
-    function goToGame() {
-      window.location.href = "spiel.html"; // passe Zielseite ggf. an
+    function answerYes() {
+      window.location.href = "spiel.html"; // Zielseite anpassen
     }
 
-    const noBtn = document.getElementById("noBtn");
-    const container = document.querySelector(".buttons");
-
-    function moveNoBtn() {
-      const maxX = container.clientWidth - noBtn.offsetWidth;
-      const maxY = container.clientHeight - noBtn.offsetHeight;
-      const randX = Math.floor(Math.random() * maxX);
-      const randY = Math.floor(Math.random() * maxY);
-
-      noBtn.style.left = `${randX}px`;
-      noBtn.style.top = `${randY}px`;
+    function answerNo() {
+      const noBtn = document.getElementById("noBtn");
+      const msg = document.getElementById("funny-msg");
+      noBtn.classList.add("disappear");
+      setTimeout(() => {
+        noBtn.style.display = "none";
+        msg.style.display = "block";
+      }, 1200);
     }
-
-    noBtn.addEventListener("mouseenter", moveNoBtn);
-    noBtn.addEventListener("touchstart", moveNoBtn);
   </script>
 </body>
 </html>
