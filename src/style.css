@@ -41,6 +41,17 @@ h1 {
   background-color: #F5F5F5;
   border: 2px dashed #D66C4D;
   border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dropzone.drag-target {
+  background-color: #ffe4c4;
+  transform: scale(1.05);
+}
+
+.draggable {
+  -webkit-user-drag: none;
+  touch-action: none;
 }
 
 .dropzone.large {

@@ -17,6 +17,7 @@ const maxCount = {
 
 interact('.draggable').draggable({
   inertia: true,
+  startAxis: 'xy',
   listeners: {
     move(event) {
       const target = event.target;
@@ -35,6 +36,12 @@ interact('.draggable').draggable({
 interact('.dropzone').dropzone({
   accept: '.draggable',
   overlap: 0.5,
+  ondragenter(event) {
+    event.target.classList.add('drag-target');
+  },
+  ondragleave(event) {
+    event.target.classList.remove('drag-target');
+  },
   ondrop(event) {
     const dropType = event.target.getAttribute('data-part');
     const dragType = event.relatedTarget.getAttribute('data-part');
@@ -85,3 +92,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // Neu anhängen in zufälliger Reihenfolge
   parts.forEach(el => partsContainer.appendChild(el));
 });
+
+event.relatedTarget.style.transition = 'transform 0.3s ease';
+event.relatedTarget.style.transform = 'translate(0px, 0px)';
