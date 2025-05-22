@@ -71,3 +71,17 @@ function checkSuccess() {
     document.getElementById('success').classList.remove('hidden');
   }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const partsContainer = document.getElementById('parts');
+  const parts = Array.from(partsContainer.children);
+
+  // Fisher-Yates-Shuffle
+  for (let i = parts.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [parts[i], parts[j]] = [parts[j], parts[i]];
+  }
+
+  // Neu anhängen in zufälliger Reihenfolge
+  parts.forEach(el => partsContainer.appendChild(el));
+});
