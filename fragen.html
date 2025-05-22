@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eine Frage...</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFF2F2;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+      color: #2C3E50;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #D66C4D;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #c4573a;
+    }
+
+    #noBtn {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Magst du mich ein bisschen? 🥺</h1>
+
+  <div class="buttons">
+    <button onclick="goToGame()">Ja </button>
+    <button id="noBtn">Nein 😢</button>
+  </div>
+
+  <script>
+    function goToGame() {
+      window.location.href = "spiel.html"; // passe Zielseite ggf. an
+    }
+
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseenter", () => {
+      const container = document.querySelector(".buttons");
+      const maxX = container.clientWidth - noBtn.offsetWidth;
+      const maxY = 100;
+
+      const randX = Math.floor(Math.random() * maxX);
+      const randY = Math.floor(Math.random() * maxY);
+
+      noBtn.style.left = `${randX}px`;
+      noBtn.style.top = `${randY}px`;
+    });
+  </script>
+</body>
+</html>

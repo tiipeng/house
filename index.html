@@ -1,64 +1,67 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <title>Hormys 23</title>
-    <link rel="stylesheet" href="./src/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Happy 23</h1>
-    <div id="game">
-    <div id="dropzone-container">
-    <!-- Dach -->
-    <div class="row">
-      <div class="dropzone" data-part="dach"></div>
-    </div>
-  
-    <!-- Wand-Ebene -->
-    <div class="row">
-      <div class="dropzone" data-part="wand"></div>
-      <div class="dropzone" data-part="tür"></div>
-      <div class="dropzone" data-part="fenster"></div>
-    </div>
-  
-    <!-- Pfeiler-Ebene -->
-    <div class="row">
-      <div class="dropzone" data-part="pfeiler"></div>
-      <div class="dropzone" data-part="pfeiler"></div>
-      <div class="dropzone" data-part="pfeiler"></div>
-      <div class="dropzone" data-part="pfeiler"></div>
-    </div>
-  </div>
-  </div>
-      <div id="parts">
-        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
-        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
-        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
-        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
-    
-      <img src="./src/wand.png" class="draggable" data-part="wand" />
-      <img src="./src/tuer.png" class="draggable" data-part="tür" />
-      <img src="./src/fenster.png" class="draggable" data-part="fenster" />
-      <img src="./src/dach.png" class="draggable" data-part="dach" />
-    </div>
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Willkommen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #E6F2FF;
+      margin: 0;
+      padding: 40px 20px;
+      text-align: center;
+      color: #2C3E50;
+    }
 
-    <div id="success" class="hidden">
-      <h2>Yeu ♥</h2>
-      <img
-        src="./src/tpng.PNG"
-        alt="Belohnung"
-      />
-      <p>
-      <a download href="./src/tpng.png">Bild herunterladen</a>
-      </p>
-    </div>
-  </div>
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
 
-    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
-    <script src="./src/script.js"></script>
-  </body>
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    img {
+      width: 200px;
+      margin-bottom: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #D66C4D;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c4573a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello Baby</h1>
+  <p>
+   Leider hatte ich nicht so viel Zeit gehabt hier das voll Programm abzufeuern. Als entschädigung das ich gerade nicht da bin, wollte ich dir trotzdem was kleines geben. Damit unser kleines Häuschen stabil bleibt hier ein kleines Geschenk.
+  </p>
+  <img src="./src/haus.jpg" alt="Süßes Häuschen">
+  <br>
+  <button onclick="start()">スタート</button>
+
+  <script>
+    function start() {
+      window.location.href = "fragen.html"; // Zielseite anpassen
+    }
+  </script>
+</body>
 </html>

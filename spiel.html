@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Hormys 23</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Happy 23</h1>
+    <div id="game">
+    <div id="dropzone-container">
+    <!-- Dach -->
+    <div class="row">
+      <div class="dropzone" data-part="dach"></div>
+    </div>
+  
+    <!-- Wand-Ebene -->
+    <div class="row">
+      <div class="dropzone" data-part="wand"></div>
+      <div class="dropzone" data-part="tür"></div>
+      <div class="dropzone" data-part="fenster"></div>
+    </div>
+  
+    <!-- Pfeiler-Ebene -->
+    <div class="row">
+      <div class="dropzone" data-part="pfeiler"></div>
+      <div class="dropzone" data-part="pfeiler"></div>
+      <div class="dropzone" data-part="pfeiler"></div>
+      <div class="dropzone" data-part="pfeiler"></div>
+    </div>
+  </div>
+  </div>
+      <div id="parts">
+        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
+        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
+        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
+        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
+    
+      <img src="./src/wand.png" class="draggable" data-part="wand" />
+      <img src="./src/tuer.png" class="draggable" data-part="tür" />
+      <img src="./src/fenster.png" class="draggable" data-part="fenster" />
+      <img src="./src/dach.png" class="draggable" data-part="dach" />
+    </div>
+      </div>
+    </div>
+
+    <div id="success" class="hidden">
+      <h2>Yeu ♥</h2>
+      <img
+        src="./src/tpng.PNG"
+        alt="Belohnung"
+      />
+      <p>
+      <a download href="./src/tpng.png">Bild herunterladen</a>
+      </p>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="./src/script.js"></script>
+  </body>
+</html>
