@@ -24,9 +24,11 @@
     .buttons {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      align-items: center;
+      gap: 40px;
       margin-top: 40px;
       position: relative;
+      height: 100px;
     }
 
     button {
@@ -38,6 +40,8 @@
       font-size: 1.2rem;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      position: relative;
+      z-index: 1;
     }
 
     button:hover {
@@ -46,15 +50,51 @@
 
     #noBtn {
       position: absolute;
+      z-index: 2;
     }
+
+    .button-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 160px;
+  margin: 40px auto;
+}
+
+.button-wrapper button {
+  padding: 12px 24px;
+  background-color: #D66C4D;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: absolute;
+}
+
+.button-wrapper button:hover {
+  background-color: #c4573a;
+}
+
+#noBtn {
+  left: 200px;
+  top: 0;
+}
+
+.button-wrapper button:first-child {
+  left: 50px;
+  top: 60px;
+}
+
   </style>
 </head>
 <body>
-  <h1>Magst du mich ein bisschen? 🥺</h1>
+  <h1>Hier darfst du nur weiter wenn du heilst.</h1>
 
   <div class="buttons">
-    <button onclick="goToGame()">Ja </button>
-    <button id="noBtn">Nein 😢</button>
+    <button onclick="goToGame()">Ja ich heile</button>
+    <button id="noBtn">No, just kill me</button>
   </div>
 
   <script>
@@ -63,18 +103,20 @@
     }
 
     const noBtn = document.getElementById("noBtn");
+    const container = document.querySelector(".buttons");
 
-    noBtn.addEventListener("mouseenter", () => {
-      const container = document.querySelector(".buttons");
+    function moveNoBtn() {
       const maxX = container.clientWidth - noBtn.offsetWidth;
-      const maxY = 100;
-
+      const maxY = container.clientHeight - noBtn.offsetHeight;
       const randX = Math.floor(Math.random() * maxX);
       const randY = Math.floor(Math.random() * maxY);
 
       noBtn.style.left = `${randX}px`;
       noBtn.style.top = `${randY}px`;
-    });
+    }
+
+    noBtn.addEventListener("mouseenter", moveNoBtn);
+    noBtn.addEventListener("touchstart", moveNoBtn);
   </script>
 </body>
 </html>
