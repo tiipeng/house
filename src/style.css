@@ -1,0 +1,64 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #f0f0f0;
+  padding: 1em;
+}
+
+#game {
+  max-width: 400px;
+  margin: auto;
+}
+
+#dropzone-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.dropzone {
+  width: 80px;
+  height: 80px;
+  background: #eee;
+  border: 2px dashed #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.dropzone.large {
+  width: 280px;
+}
+
+#parts {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.draggable {
+  width: 80px;
+  height: 80px;
+  cursor: grab;
+}
+
+.hidden {
+  display: none;
+}
+
+#success img {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
