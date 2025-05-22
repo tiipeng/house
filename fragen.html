@@ -6,7 +6,7 @@
   <title>Eine Frage...</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+body {
       font-family: 'Poppins', sans-serif;
       background-color: #FFF2F2;
       margin: 0;
@@ -14,24 +14,23 @@
       text-align: center;
       color: #2C3E50;
       overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
     }
 
     h1 {
       font-size: 2rem;
-      margin-bottom: 20px;
+      margin-top: 20px;
     }
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      margin-top: 40px;
-      position: relative;
-      height: 100px;
-    }
-
-    button {
+    #noBtn {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
       padding: 12px 24px;
       background-color: #D66C4D;
       color: white;
@@ -40,52 +39,30 @@
       font-size: 1.2rem;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      position: relative;
-      z-index: 1;
     }
 
-    button:hover {
+    #noBtn:hover {
       background-color: #c4573a;
     }
 
-    #noBtn {
-      position: absolute;
-      z-index: 2;
+    #yesBtn {
+      margin-bottom: 40px;
+      padding: 12px 24px;
+      background-color: #D66C4D;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
-    .button-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  height: 160px;
-  margin: 40px auto;
-}
-
-.button-wrapper button {
-  padding: 12px 24px;
-  background-color: #D66C4D;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  position: absolute;
-}
-
-.button-wrapper button:hover {
-  background-color: #c4573a;
-}
-
-#noBtn {
-  left: 200px;
-  top: 0;
-}
-
-.button-wrapper button:first-child {
-  left: 50px;
-  top: 60px;
-}
+    #yesBtn:hover {
+      background-color: #c4573a;
+    }
+  </style>
+</head>
+<body>
 
   </style>
 </head>
