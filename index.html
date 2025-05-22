@@ -8,8 +8,7 @@
   </head>
   <body>
     <h1>Baue das Haus 🏡</h1>
-
-    <div id="dropzone-container">
+    <div id="game">
     <div id="dropzone-container">
     <!-- Dach -->
     <div class="row">
@@ -25,40 +24,38 @@
   
     <!-- Pfeiler-Ebene -->
     <div class="row">
-      <div class="dropzone" data-part="pfeiler1">Pfeiler 1</div>
-      <div class="dropzone" data-part="pfeiler2">Pfeiler 2</div>
-      <div class="dropzone" data-part="pfeiler3">Pfeiler 3</div>
-      <div class="dropzone" data-part="pfeiler4">Pfeiler 4</div>
+      <div class="dropzone" data-part="pfeiler">Pfeiler 1</div>
+      <div class="dropzone" data-part="pfeiler">Pfeiler 2</div>
+      <div class="dropzone" data-part="pfeiler">Pfeiler 3</div>
+      <div class="dropzone" data-part="pfeiler">Pfeiler 4</div>
     </div>
   </div>
   </div>
-
       <div id="parts">
-      <div id="parts">
-      <img src="https://i.imgur.com/VxTm7Kh.png" class="draggable" data-part="pfeiler1" />
-      <img src="https://i.imgur.com/VxTm7Kh.png" class="draggable" data-part="pfeiler2" />
-      <img src="https://i.imgur.com/VxTm7Kh.png" class="draggable" data-part="pfeiler3" />
-      <img src="https://i.imgur.com/VxTm7Kh.png" class="draggable" data-part="pfeiler4" />
+        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
+        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
+        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
+        <img src="./src/pfeiler.png" class="draggable" data-part="pfeiler" />
     
-      <img src="https://i.imgur.com/jw8Te1W.png" class="draggable" data-part="wand" />
-      <img src="https://i.imgur.com/6V1zAmG.png" class="draggable" data-part="tür" />
-      <img src="https://i.imgur.com/DWz4Myh.png" class="draggable" data-part="fenster" />
-      <img src="https://i.imgur.com/0KkPYM4.png" class="draggable" data-part="dach" />
+      <img src="./src/wand.png" class="draggable" data-part="wand" />
+      <img src="./src/tuer.png" class="draggable" data-part="tür" />
+      <img src="./src/fenster.png" class="draggable" data-part="fenster" />
+      <img src="./src/dach.png" class="draggable" data-part="dach" />
     </div>
       </div>
     </div>
 
     <div id="success" class="hidden">
-      <h2>🎉 Haus fertig! Hier ist dein Geschenk:</h2>
+      <h2>Haus fertig! Hier ist dein Geschenk:</h2>
       <img
-        src="https://via.placeholder.com/300x200?text=Geschenk"
+        src="./src/tpng.PNG"
         alt="Belohnung"
       />
       <p>
-      <img src="https://i.imgur.com/qU6hYlB.png" alt="Belohnung" />
-      <a download href="https://i.imgur.com/qU6hYlB.png">Bild herunterladen</a>
+      <a download href="./src/tpng.png">Bild herunterladen</a>
       </p>
     </div>
+  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     <script src="./src/script.js"></script>
